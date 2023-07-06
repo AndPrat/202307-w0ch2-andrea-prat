@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.cards {
+  border: 20px;
+  border-color: rgb(41, 41, 44);
+  border-radius: 20px;
+  width: 200px;
+  height: 300px;
+  background-color: rgb(227, 227, 227);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-user {
+}
+
+.card-computer {
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+  grid-column-gap: 20px;
+}
+
+.table-game {
+  padding: 20px;
+}
+
+.button-game {
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.buttons-secction {
+  align: center;
+  padding: 20px;
+}
+
+.bigger-card {
+  background-color: rgb(241, 25, 148);
+  color: beige;
+}
+
+.smaller-card {
+  background-color: rgb(244, 174, 35);
+  color: beige;
+}
+
+.suit-cards {
+  height: 15%;
+}
+
+.number-cards {
+  text-align: center;
+  color: black;
+  size: 30px;
+  height: 70%;
+}
+
+.suit-cards,
+.number-cards {
+  border: 1px solid black;
+}
