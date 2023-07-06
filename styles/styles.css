@@ -19,12 +19,6 @@ ul {
   justify-content: center;
 }
 
-.card-user {
-}
-
-.card-computer {
-}
-
 .wrapper {
   display: flex;
   flex-direction: row;

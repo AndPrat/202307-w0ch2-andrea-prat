@@ -1,4 +1,4 @@
-const generateStackCards = () => {
+const generateDeckCards = () => {
   const suitsCards = [
     "♠️ (picas)",
     "♣️ (tréboles)",
@@ -22,20 +22,39 @@ const generateStackCards = () => {
     "A (as)",
   ];
 
-  const cards = [];
+  const deck = [];
 
   for (let suit = 0; suit < suitsCards.length; suit++) {
     for (let numbers = 0; numbers < numbersCards.length; numbers++) {
-      cards.push({ suits: suitsCards[suit], numbers: numbersCards[numbers] });
+      deck.push({ suit: suitsCards[suit], number: numbersCards[numbers] });
     }
   }
-  return cards;
+  return deck;
 };
 
-const createRandomCards = (generateStackCards) => {
-  const stackCards = generateStackCards();
-  const randomCard = stackCards[Math.floor(Math.random() * stackCards.length)];
+const createRandomCard = (deck) => {
+  const randomCard = deck[Math.floor(Math.random() * deck.length)];
   console.log(randomCard);
   return randomCard;
 };
-createRandomCards(generateStackCards);
+
+const selectionNumberElements = document.querySelectorAll(".suit-cards");
+const selectionSuitElements = document.querySelectorAll(".number-cards");
+
+const giveNumbersCards = (suitCard, numberCard) => {
+  selectionNumberElements.forEach(
+    (selectionNumberElement) => (selectionNumberElement.textContent = suitCard)
+  );
+
+  selectionSuitElements.forEach(
+    (selectionSuitElement) => (selectionSuitElement.textContent = numberCard)
+  );
+};
+
+const playGame = () => {
+  const deck = generateDeckCards();
+  const card = createRandomCard(deck);
+  giveNumbersCards(card.suit, card.number);
+};
+
+playGame();
