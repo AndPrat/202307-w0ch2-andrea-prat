@@ -41,6 +41,8 @@ h1 {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-image: url("../img/pattern-texture.jpg");
+  background-size: cover;
 }
 
 .button-game {
@@ -65,13 +67,15 @@ h1 {
   font-size: 20px;
 }
 
-.suit-cards {
+.suit-cards,
+.suit-cards-user {
   height: 15%;
   display: flex;
   padding: 20px;
 }
 
-.number-cards {
+.number-cards,
+.number-cards-user {
   color: black;
   font-size: 75px;
   height: 70%;
