@@ -1,9 +1,14 @@
 body {
   margin: 0;
+  font-family: "Poppins";
 }
 
 ul {
   list-style: none;
+}
+
+h1 {
+  font-size: 30px;
 }
 
 .cards {
@@ -17,6 +22,8 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 8px solid rgb(244, 68, 118);
+  border-radius: 20px;
 }
 
 .wrapper {
@@ -29,42 +36,56 @@ ul {
 }
 
 .table-game {
+  display: flex;
   padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button-game {
-  width: 100px;
+  width: 150px;
   height: 50px;
   border-radius: 20px;
 }
 
 .buttons-secction {
-  align: center;
-  padding: 20px;
+  padding: 20px 30px;
 }
 
-.bigger-card {
+.bigger-button {
   background-color: rgb(241, 25, 148);
   color: beige;
+  font-size: 20px;
 }
 
-.smaller-card {
+.smaller-button {
   background-color: rgb(244, 174, 35);
   color: beige;
+  font-size: 20px;
 }
 
 .suit-cards {
   height: 15%;
+  display: flex;
+  padding: 20px;
 }
 
 .number-cards {
-  text-align: center;
   color: black;
-  size: 30px;
+  font-size: 75px;
   height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.suit-cards,
-.number-cards {
-  border: 1px solid black;
+.suit-left {
+  align-items: start;
+  justify-content: start;
+}
+
+.suit-right {
+  align-items: end;
+  justify-content: end;
 }
