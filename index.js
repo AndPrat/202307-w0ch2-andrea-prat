@@ -1,12 +1,12 @@
 const generateStackCards = () => {
-  const suitsDeckCards = [
+  const suitsCards = [
     "♠️ (picas)",
     "♣️ (tréboles)",
     "♦️ (diamantes)",
     "♥️ (corazones)",
   ];
 
-  const deckCards = [
+  const numbersCards = [
     2,
     3,
     4,
@@ -24,9 +24,9 @@ const generateStackCards = () => {
 
   const cards = [];
 
-  for (let suit = 0; suit < suitsDeckCards.length; suit++) {
-    for (let deck = 0; deck < deckCards.length; deck++) {
-      cards.push(suitsDeckCards[suit] + deckCards[deck]);
+  for (let suit = 0; suit < suitsCards.length; suit++) {
+    for (let numbers = 0; numbers < numbersCards.length; numbers++) {
+      cards.push({ suits: suitsCards[suit], numbers: numbersCards[numbers] });
     }
   }
   return cards;
