@@ -22,6 +22,11 @@ const createRandomCard = (deck) => {
 const selectionNumberElements = document.querySelectorAll(".suit-cards");
 const selectionSuitElements = document.querySelectorAll(".number-cards");
 
+const selectionNumberUserElements =
+  document.querySelectorAll(".suit-cards-user");
+const selectionSuitUserElements =
+  document.querySelectorAll(".number-cards-user");
+
 const giveNumbersCards = (suitCard, numberCard) => {
   selectionNumberElements.forEach(
     (selectionNumberElement) => (selectionNumberElement.textContent = suitCard)
@@ -32,10 +37,24 @@ const giveNumbersCards = (suitCard, numberCard) => {
   );
 };
 
+const giveCardsUser = (suitCard, numberCard) => {
+  selectionNumberUserElements.forEach(
+    (selectionNumberUserElement) =>
+      (selectionNumberUserElement.textContent = suitCard)
+  );
+
+  selectionSuitUserElements.forEach(
+    (selectionSuitUserElement) =>
+      (selectionSuitUserElement.textContent = numberCard)
+  );
+};
+
 const playGame = () => {
   const deck = generateDeckCards();
   const card = createRandomCard(deck);
+  const cardUser = createRandomCard(deck);
   giveNumbersCards(card.suit, card.number);
+  giveCardsUser(cardUser.suit, cardUser.number);
 };
 
 playGame();
