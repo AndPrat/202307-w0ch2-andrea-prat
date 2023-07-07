@@ -36,6 +36,7 @@ h1 {
 }
 
 .table-game {
+  height: 100vh;
   display: flex;
   padding: 20px;
   justify-content: center;
