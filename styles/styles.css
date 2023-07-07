@@ -75,7 +75,8 @@ h1 {
 }
 
 .number-cards,
-.number-cards-user {
+.number-cards-user,
+.question-mark {
   color: black;
   font-size: 75px;
   height: 70%;
@@ -92,4 +93,8 @@ h1 {
 .suit-right {
   align-items: end;
   justify-content: end;
+}
+
+.hidden {
+  display: none;
 }
