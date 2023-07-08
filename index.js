@@ -59,26 +59,27 @@ const starGame = () => {
   const card = createRandomCard(deck);
   const cardUser = createRandomCard(deck);
   giveNumbersCards(card.suit, card.number);
+  const apperUserCard = () => {
+    selectionBiggerButtonElements.addEventListener("click", () => {
+      document.querySelector(".question-mark").classList.add("hidden");
+      document.querySelectorAll(".suit-cards-user").forEach((element) => {
+        element.classList.remove("hidden");
+      });
 
-  selectionBiggerButtonElements.addEventListener("click", () => {
-    document.querySelector(".question-mark").classList.add("hidden");
-    document.querySelectorAll(".suit-cards-user").forEach((element) => {
-      element.classList.remove("hidden");
+      document.querySelector(".number-cards-user").classList.remove("hidden");
+      giveCardsUser(cardUser.suit, cardUser.number);
     });
 
-    document.querySelector(".number-cards-user").classList.remove("hidden");
-    giveCardsUser(cardUser.suit, cardUser.number);
-  });
+    selectionSmallerButtonElements.addEventListener("click", () => {
+      document.querySelector(".question-mark").classList.add("hidden");
+      document.querySelectorAll(".suit-cards-user").forEach((element) => {
+        element.classList.remove("hidden");
+      });
 
-  selectionSmallerButtonElements.addEventListener("click", () => {
-    document.querySelector(".question-mark").classList.add("hidden");
-    document.querySelectorAll(".suit-cards-user").forEach((element) => {
-      element.classList.remove("hidden");
+      document.querySelector(".number-cards-user").classList.remove("hidden");
+      giveCardsUser(cardUser.suit, cardUser.number);
     });
-
-    document.querySelector(".number-cards-user").classList.remove("hidden");
-    giveCardsUser(cardUser.suit, cardUser.number);
-  });
+  };
+  apperUserCard();
 };
-
 starGame();
