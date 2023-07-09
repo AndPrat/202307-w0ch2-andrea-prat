@@ -52,34 +52,41 @@ const selectionBiggerButtonElements = document.querySelector(".bigger-button");
 const selectionSmallerButtonElements =
   document.querySelector(".smaller-button");
 
-const showUserCard = () => {};
+let userBet = "";
 
-const starGame = () => {
+const renderUserCard = (cardUser) => {
+  selectionBiggerButtonElements.addEventListener("click", (event) => {
+    userBet= event.target.innerText;
+    document.querySelector(".question-mark").classList.add("hidden");
+    document.querySelectorAll(".suit-cards-user").forEach((element) => {
+      element.classList.remove("hidden");
+    });
+
+    document.querySelector(".number-cards-user").classList.remove("hidden");
+    giveCardsUser(cardUser.suit, cardUser.number);
+  });
+
+  selectionSmallerButtonElements.addEventListener("click", (event) => {
+    userBet= event.target.innerText;
+    document.querySelector(".question-mark").classList.add("hidden");
+    document.querySelectorAll(".suit-cards-user").forEach((element) => {
+      element.classList.remove("hidden");
+    });
+
+    document.querySelector(".number-cards-user").classList.remove("hidden");
+    giveCardsUser(cardUser.suit, cardUser.number);
+  });
+};
+
+
+
+
+
+const startGame = () => {
   const deck = generateDeckCards();
   const card = createRandomCard(deck);
   const cardUser = createRandomCard(deck);
   giveNumbersCards(card.suit, card.number);
-  const apperUserCard = () => {
-    selectionBiggerButtonElements.addEventListener("click", () => {
-      document.querySelector(".question-mark").classList.add("hidden");
-      document.querySelectorAll(".suit-cards-user").forEach((element) => {
-        element.classList.remove("hidden");
-      });
-
-      document.querySelector(".number-cards-user").classList.remove("hidden");
-      giveCardsUser(cardUser.suit, cardUser.number);
-    });
-
-    selectionSmallerButtonElements.addEventListener("click", () => {
-      document.querySelector(".question-mark").classList.add("hidden");
-      document.querySelectorAll(".suit-cards-user").forEach((element) => {
-        element.classList.remove("hidden");
-      });
-
-      document.querySelector(".number-cards-user").classList.remove("hidden");
-      giveCardsUser(cardUser.suit, cardUser.number);
-    });
-  };
-  apperUserCard();
+  renderUserCard(cardUser);
 };
-starGame();
+startGame();
