@@ -54,7 +54,26 @@ const selectionSmallerButtonElements =
 
 let userBet = "";
 
-const renderUserCard = (cardUser) => {
+const testCards = (card, cardUser) => {
+  console.log({ card, cardUser });
+  const numbersCards = [card.number, cardUser.number];
+  const sortedNumbers = numbersCards.sort((a, b) => a - b);
+  const gameResult = document.querySelector(".game-result");
+
+  console.log(userBet);
+
+  gameResult.innerHTML = "You loose!";
+
+  if (cardUser.number === sortedNumbers[1] && userBet === "Bigger") {
+    gameResult.innerHTML = "You win!";
+  }
+
+  if (cardUser.number === sortedNumbers[0] && userBet === "Smaller") {
+    gameResult.innerHTML = "You win!";
+  }
+};
+
+const renderUserCard = (card, cardUser) => {
   selectionBiggerButtonElements.addEventListener("click", (event) => {
     userBet = event.target.innerText;
     document.querySelector(".question-mark").classList.add("hidden");
@@ -64,6 +83,7 @@ const renderUserCard = (cardUser) => {
 
     document.querySelector(".number-cards-user").classList.remove("hidden");
     giveCardsUser(cardUser.suit, cardUser.number);
+    testCards(card, cardUser);
   });
 
   selectionSmallerButtonElements.addEventListener("click", (event) => {
@@ -75,22 +95,15 @@ const renderUserCard = (cardUser) => {
 
     document.querySelector(".number-cards-user").classList.remove("hidden");
     giveCardsUser(cardUser.suit, cardUser.number);
+    testCards(card, cardUser);
   });
 };
-
-//const testCards = (deck) => {
-//deck[numbers].forEach()
-//if (deck[numbers] > ) {
-
-//}
-//console.log(deck[numbers])
-//};
 
 const startGame = () => {
   const deck = generateDeckCards();
   const card = createRandomCard(deck);
   const cardUser = createRandomCard(deck);
   giveNumbersCards(card.suit, card.number);
-  renderUserCard(cardUser);
+  renderUserCard(card, cardUser);
 };
 startGame();
