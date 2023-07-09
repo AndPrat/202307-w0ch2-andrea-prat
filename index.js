@@ -56,7 +56,7 @@ let userBet = "";
 
 const renderUserCard = (cardUser) => {
   selectionBiggerButtonElements.addEventListener("click", (event) => {
-    userBet= event.target.innerText;
+    userBet = event.target.innerText;
     document.querySelector(".question-mark").classList.add("hidden");
     document.querySelectorAll(".suit-cards-user").forEach((element) => {
       element.classList.remove("hidden");
@@ -67,7 +67,7 @@ const renderUserCard = (cardUser) => {
   });
 
   selectionSmallerButtonElements.addEventListener("click", (event) => {
-    userBet= event.target.innerText;
+    userBet = event.target.innerText;
     document.querySelector(".question-mark").classList.add("hidden");
     document.querySelectorAll(".suit-cards-user").forEach((element) => {
       element.classList.remove("hidden");
@@ -78,9 +78,13 @@ const renderUserCard = (cardUser) => {
   });
 };
 
+//const testCards = (deck) => {
+//deck[numbers].forEach()
+//if (deck[numbers] > ) {
 
-
-
+//}
+//console.log(deck[numbers])
+//};
 
 const startGame = () => {
   const deck = generateDeckCards();
